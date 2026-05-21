@@ -1,5 +1,6 @@
 开发过程记录：
- LogLevel 枚举的具体值怎么命名？Windows 的 wingdi.h 里有 #define ERROR 0，会和 enum class LogLevel { ERROR }
+ 一
+LogLevel 枚举的具体值怎么命名？Windows 的 wingdi.h 里有 #define ERROR 0，会和 enum class LogLevel { ERROR }
      冲突。 → 全小写 trace/debug/info/warn/error/critical/off (推荐)
      · default_formatter 的输出格式怎么定？ → 固定格式：[time] [level] [name] [pid:tid] message (file:line) (推荐)
      · LogSink 抽象基类要不要带 sink-level 过滤？spdlog 的 sink 自己有 level，可以独立于 logger 关掉某些 sink
@@ -12,3 +13,20 @@
      意味着每次打日志，都要在堆（Heap）上分配一次内存，把字符串拷贝过去。
      而 std::string_view 在底层只是一个 const char* 指针加上一个 size_t 长度：通常只有 16 字节
      它不拥有数据，只观察数据。这意味着构建一个 LogMsg 是一次零拷贝
+
+二
+线程池设计 + context模块
+	提交任务的 API 形态： 双接口：Detached + Submit： PostDetached(callable) 无返回值零开销走热路径；Submit<F>() 返回 future<R> 用于需要等待结果的场景。日志库未来的 Flush() 等待可以走 Submit。  
+	扩容策略：扩容 + 空闲自缩
+
+
+三
+加密模式选型：AES-GCM（推荐）
+    输出格式：[12B nonce][ciphertext, 等长于明文][16B 认证 tag]
+    唯一的坑：同一密钥下 nonce 绝不能重复。一旦重复，攻击者就能算出两条明文的 XOR、并能伪造任意密文
+    但日志场景下这个坑很好避：每条日志一个单调递增的 counter 当 nonce（比如 12 字节 = 8 字节进程启动时戳 + 4
+  字节序号），永远不会重。
+  压缩选择了Zlib，但是要抽象出一层三方库无关的接口，可以定义一个公共的父类，不同的子类提供不同的压缩能力，后续如果有更好
+  的压缩算法，也可以在新建一个子类
+  同样的 加密模式也是 会抽象出一个加密接口，提供不同的加密算法实现。后续如果有更好的加密算法，也可以在新建一个子类
+  目前选择了AES +ECDH

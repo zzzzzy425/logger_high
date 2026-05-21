@@ -8,10 +8,15 @@
   },
   "ExpandedNodes": [
     "",
+    "\\context",
+    "\\examples",
+    "\\formatter",
     "\\handle",
+    "\\mmap",
+    "\\sinks",
     "\\third_party",
     "\\utils"
   ],
-  "SelectedNode": "\\handle\\log_handle.cpp",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

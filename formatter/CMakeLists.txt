@@ -2,6 +2,7 @@ find_package(fmt CONFIG REQUIRED)
 
 add_library(logger_formatter STATIC
     default_formatter.cpp
+    effective_formatter.cpp
 )
 
 add_library(logger::formatter ALIAS logger_formatter)
@@ -14,5 +15,6 @@ target_compile_features(logger_formatter PUBLIC cxx_std_17)
 
 target_link_libraries(logger_formatter
     PUBLIC  logger::utils
+            logger::proto
     PRIVATE fmt::fmt
 )
