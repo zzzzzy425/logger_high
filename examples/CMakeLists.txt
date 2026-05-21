@@ -39,3 +39,18 @@ target_link_libraries(proto_smoke PRIVATE
     logger::proto
     logger::utils
 )
+
+add_executable(effective_sink_smoke effective_sink_smoke.cpp)
+
+find_package(cryptopp CONFIG REQUIRED)
+target_link_libraries(effective_sink_smoke PRIVATE
+    logger::sinks
+    logger::context
+    logger::mmap
+    logger::compress
+    logger::crypt
+    logger::formatter
+    logger::proto
+    logger::utils
+    cryptopp::cryptopp
+)

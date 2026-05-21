@@ -4,6 +4,7 @@ add_library(logger_crypt STATIC
     aes_gcm_cipher.cpp
     x25519_agreement.cpp
     kdf.cpp
+    server_key_loader.cpp
 )
 
 add_library(logger::crypt ALIAS logger_crypt)
