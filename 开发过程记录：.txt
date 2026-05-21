@@ -1,0 +1,14 @@
+开发过程记录：
+ LogLevel 枚举的具体值怎么命名？Windows 的 wingdi.h 里有 #define ERROR 0，会和 enum class LogLevel { ERROR }
+     冲突。 → 全小写 trace/debug/info/warn/error/critical/off (推荐)
+     · default_formatter 的输出格式怎么定？ → 固定格式：[time] [level] [name] [pid:tid] message (file:line) (推荐)
+     · LogSink 抽象基类要不要带 sink-level 过滤？spdlog 的 sink 自己有 level，可以独立于 logger 关掉某些 sink
+     的低等级输出。 → 不带，过滤完全由 LogHandle 负责 (推荐)
+
+     在source_location里，件名和函数名在编译时就已经确定，它们会存储在程序的只读数据段（常量区）。
+     使用 const char* 只是保存一个指向内存地址的指针（8字节），完全没有任何内存分配（new/malloc）和字符串拷贝的开销
+
+     全面拥抱 std::string_view：统的日志库（比如早期的 glog 或一些手写库）在这里会用 std::string。std::string 意味着什么？
+     意味着每次打日志，都要在堆（Heap）上分配一次内存，把字符串拷贝过去。
+     而 std::string_view 在底层只是一个 const char* 指针加上一个 size_t 长度：通常只有 16 字节
+     它不拥有数据，只观察数据。这意味着构建一个 LogMsg 是一次零拷贝

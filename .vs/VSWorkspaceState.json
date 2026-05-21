@@ -1,0 +1,17 @@
+{
+  "OutputFoldersPerTargetSystem": {
+    "Local Machine": [
+      "build\\default",
+      "build\\release",
+      "build\\vs"
+    ]
+  },
+  "ExpandedNodes": [
+    "",
+    "\\handle",
+    "\\third_party",
+    "\\utils"
+  ],
+  "SelectedNode": "\\handle\\log_handle.cpp",
+  "PreviewInSolutionExplorer": false
+}

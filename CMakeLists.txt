@@ -15,6 +15,10 @@ else()
     add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# Phase 0: only utils is built. Other subdirs (handle/, sinks/, ...) will be
-# wired in as their first sources land. See memory/roadmap.md.
 add_subdirectory(utils)
+add_subdirectory(context)
+add_subdirectory(mmap)
+add_subdirectory(formatter)
+add_subdirectory(sinks)
+add_subdirectory(handle)
+add_subdirectory(examples)
