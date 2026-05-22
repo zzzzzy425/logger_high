@@ -3,86 +3,28 @@
   "WorkspaceRootPath": "D:\\logger_high\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\\u5F00\u53D1\u8FC7\u7A0B\u8BB0\u5F55\uFF1A.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:\u5F00\u53D1\u8FC7\u7A0B\u8BB0\u5F55\uFF1A.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\sinks\\log_sink.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sinks\\log_sink.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\sinks\\console_sink.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sinks\\console_sink.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\sinks\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:sinks\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\vcpkg.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:vcpkg.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\audit\\shard_reader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:audit\\shard_reader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\CMakePresets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakePresets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\mmap\\mmap_buffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:mmap\\mmap_buffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\mmap\\mmap_store.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:mmap\\mmap_store.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\examples\\context_smoke.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:examples\\context_smoke.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\examples\\encrypted_logging_demo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:examples\\encrypted_logging_demo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Visual Studio\\Visual Studio 2022\\Community\\VC\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\examples\\hello.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:examples\\hello.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\formatter\\default_formatter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:formatter\\default_formatter.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\utils\\log_level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:utils\\log_level.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\utils\\system_info.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:utils\\system_info.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\handle\\log_handle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:handle\\log_handle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\handle\\log_handle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:handle\\log_handle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\handle\\log_macros.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:handle\\log_macros.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\handle\\log_msg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:handle\\log_msg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\utils\\source_location.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:utils\\source_location.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|CMake \u6982\u8FF0\u9875||{B1CAA5B0-FEB1-4350-8AB9-F895876842F2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\logger_high\\\u5F00\u53D1\u8FC7\u7A0B\u8BB0\u5F55\uFF1A.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:\u5F00\u53D1\u8FC7\u7A0B\u8BB0\u5F55\uFF1A.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -92,24 +34,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 308,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "D:\\logger_high\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "D:\\logger_high\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-21T12:43:26.754Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -117,242 +46,77 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CMakeLists.txt",
-              "DocumentMoniker": "D:\\logger_high\\sinks\\CMakeLists.txt",
-              "RelativeDocumentMoniker": "sinks\\CMakeLists.txt",
-              "ToolTip": "D:\\logger_high\\sinks\\CMakeLists.txt",
-              "RelativeToolTip": "sinks\\CMakeLists.txt",
+              "DocumentIndex": 0,
+              "Title": "shard_reader.cpp",
+              "DocumentMoniker": "D:\\logger_high\\audit\\shard_reader.cpp",
+              "RelativeDocumentMoniker": "audit\\shard_reader.cpp",
+              "ToolTip": "D:\\logger_high\\audit\\shard_reader.cpp",
+              "RelativeToolTip": "audit\\shard_reader.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-05-21T11:46:55.211Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-22T14:18:19.362Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "vcpkg.json",
-              "DocumentMoniker": "D:\\logger_high\\vcpkg.json",
-              "RelativeDocumentMoniker": "vcpkg.json",
-              "ToolTip": "D:\\logger_high\\vcpkg.json",
-              "RelativeToolTip": "vcpkg.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-21T11:46:03.339Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "README.md",
               "DocumentMoniker": "D:\\logger_high\\README.md",
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "D:\\logger_high\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADsBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-05-21T11:45:59.651Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CMakeLists.txt",
-              "DocumentMoniker": "D:\\logger_high\\CMakeLists.txt",
-              "RelativeDocumentMoniker": "CMakeLists.txt",
-              "ToolTip": "D:\\logger_high\\CMakeLists.txt",
-              "RelativeToolTip": "CMakeLists.txt",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-05-21T11:45:56.173Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "vcpkg.cmake",
-              "DocumentMoniker": "D:\\Visual Studio\\Visual Studio 2022\\Community\\VC\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake",
-              "RelativeDocumentMoniker": "..\\Visual Studio\\Visual Studio 2022\\Community\\VC\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake",
-              "ToolTip": "D:\\Visual Studio\\Visual Studio 2022\\Community\\VC\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake",
-              "RelativeToolTip": "..\\Visual Studio\\Visual Studio 2022\\Community\\VC\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake",
-              "ViewState": "AgIAAHcDAAAAAAAAAAAkwIgDAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-21T11:45:34.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CMakePresets.json",
-              "DocumentMoniker": "D:\\logger_high\\CMakePresets.json",
-              "RelativeDocumentMoniker": "CMakePresets.json",
-              "ToolTip": "D:\\logger_high\\CMakePresets.json",
-              "RelativeToolTip": "CMakePresets.json",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-21T11:45:21.539Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "hello.cpp",
-              "DocumentMoniker": "D:\\logger_high\\examples\\hello.cpp",
-              "RelativeDocumentMoniker": "examples\\hello.cpp",
-              "ToolTip": "D:\\logger_high\\examples\\hello.cpp",
-              "RelativeToolTip": "examples\\hello.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-05-21T11:45:00.974Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "context_smoke.cpp",
-              "DocumentMoniker": "D:\\logger_high\\examples\\context_smoke.cpp",
-              "RelativeDocumentMoniker": "examples\\context_smoke.cpp",
-              "ToolTip": "D:\\logger_high\\examples\\context_smoke.cpp",
-              "RelativeToolTip": "examples\\context_smoke.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-05-21T11:44:57.84Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "default_formatter.cpp",
-              "DocumentMoniker": "D:\\logger_high\\formatter\\default_formatter.cpp",
-              "RelativeDocumentMoniker": "formatter\\default_formatter.cpp",
-              "ToolTip": "D:\\logger_high\\formatter\\default_formatter.cpp",
-              "RelativeToolTip": "formatter\\default_formatter.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-05-21T11:44:47.542Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "log_sink.h",
-              "DocumentMoniker": "D:\\logger_high\\sinks\\log_sink.h",
-              "RelativeDocumentMoniker": "sinks\\log_sink.h",
-              "ToolTip": "D:\\logger_high\\sinks\\log_sink.h",
-              "RelativeToolTip": "sinks\\log_sink.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-21T11:44:35.837Z",
+              "WhenOpened": "2026-05-22T14:00:02.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "system_info.cpp",
-              "DocumentMoniker": "D:\\logger_high\\utils\\system_info.cpp",
-              "RelativeDocumentMoniker": "utils\\system_info.cpp",
-              "ToolTip": "D:\\logger_high\\utils\\system_info.cpp",
-              "RelativeToolTip": "utils\\system_info.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-05-21T11:44:24.052Z"
+              "DocumentIndex": 2,
+              "Title": "mmap_buffer.h",
+              "DocumentMoniker": "D:\\logger_high\\mmap\\mmap_buffer.h",
+              "RelativeDocumentMoniker": "mmap\\mmap_buffer.h",
+              "ToolTip": "D:\\logger_high\\mmap\\mmap_buffer.h",
+              "RelativeToolTip": "mmap\\mmap_buffer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-22T13:59:39.227Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "console_sink.cpp",
-              "DocumentMoniker": "D:\\logger_high\\sinks\\console_sink.cpp",
-              "RelativeDocumentMoniker": "sinks\\console_sink.cpp",
-              "ToolTip": "D:\\logger_high\\sinks\\console_sink.cpp",
-              "RelativeToolTip": "sinks\\console_sink.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-05-21T11:43:07.839Z"
+              "Title": "mmap_store.h",
+              "DocumentMoniker": "D:\\logger_high\\mmap\\mmap_store.h",
+              "RelativeDocumentMoniker": "mmap\\mmap_store.h",
+              "ToolTip": "D:\\logger_high\\mmap\\mmap_store.h",
+              "RelativeToolTip": "mmap\\mmap_store.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-22T13:59:38.542Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "encrypted_logging_demo.cpp",
+              "DocumentMoniker": "D:\\logger_high\\examples\\encrypted_logging_demo.cpp",
+              "RelativeDocumentMoniker": "examples\\encrypted_logging_demo.cpp",
+              "ToolTip": "D:\\logger_high\\examples\\encrypted_logging_demo.cpp",
+              "RelativeToolTip": "examples\\encrypted_logging_demo.cpp",
+              "ViewState": "AgIAACAAAAAAAAAAAAApwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-22T13:59:24.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "\u5F00\u53D1\u8FC7\u7A0B\u8BB0\u5F55\uFF1A.txt",
               "DocumentMoniker": "D:\\logger_high\\\u5F00\u53D1\u8FC7\u7A0B\u8BB0\u5F55\uFF1A.txt",
               "RelativeDocumentMoniker": "\u5F00\u53D1\u8FC7\u7A0B\u8BB0\u5F55\uFF1A.txt",
               "ToolTip": "D:\\logger_high\\\u5F00\u53D1\u8FC7\u7A0B\u8BB0\u5F55\uFF1A.txt",
               "RelativeToolTip": "\u5F00\u53D1\u8FC7\u7A0B\u8BB0\u5F55\uFF1A.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAswB8AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAIwJgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-05-21T09:00:21.867Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "log_msg.h",
-              "DocumentMoniker": "D:\\logger_high\\handle\\log_msg.h",
-              "RelativeDocumentMoniker": "handle\\log_msg.h",
-              "ToolTip": "D:\\logger_high\\handle\\log_msg.h",
-              "RelativeToolTip": "handle\\log_msg.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-21T08:23:15.423Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "log_macros.h",
-              "DocumentMoniker": "D:\\logger_high\\handle\\log_macros.h",
-              "RelativeDocumentMoniker": "handle\\log_macros.h",
-              "ToolTip": "D:\\logger_high\\handle\\log_macros.h",
-              "RelativeToolTip": "handle\\log_macros.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-21T08:23:13.076Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "log_handle.h",
-              "DocumentMoniker": "D:\\logger_high\\handle\\log_handle.h",
-              "RelativeDocumentMoniker": "handle\\log_handle.h",
-              "ToolTip": "D:\\logger_high\\handle\\log_handle.h",
-              "RelativeToolTip": "handle\\log_handle.h",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACwAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-21T08:23:12.035Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "log_handle.cpp",
-              "DocumentMoniker": "D:\\logger_high\\handle\\log_handle.cpp",
-              "RelativeDocumentMoniker": "handle\\log_handle.cpp",
-              "ToolTip": "D:\\logger_high\\handle\\log_handle.cpp",
-              "RelativeToolTip": "handle\\log_handle.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-05-21T08:23:10.537Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "source_location.h",
-              "DocumentMoniker": "D:\\logger_high\\utils\\source_location.h",
-              "RelativeDocumentMoniker": "utils\\source_location.h",
-              "ToolTip": "D:\\logger_high\\utils\\source_location.h",
-              "RelativeToolTip": "utils\\source_location.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-21T08:22:51.751Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "log_level.h",
-              "DocumentMoniker": "D:\\logger_high\\utils\\log_level.h",
-              "RelativeDocumentMoniker": "utils\\log_level.h",
-              "ToolTip": "D:\\logger_high\\utils\\log_level.h",
-              "RelativeToolTip": "utils\\log_level.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-21T08:22:32.836Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CMake \u6982\u8FF0\u9875",
-              "DocumentMoniker": "CMake \u6982\u8FF0\u9875",
-              "ToolTip": "CMake \u6982\u8FF0\u9875",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-05-21T08:20:08.152Z"
+              "WhenOpened": "2026-05-22T13:22:11.229Z"
             }
           ]
         },

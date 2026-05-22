@@ -30,3 +30,123 @@ LogLevel 枚举的具体值怎么命名？Windows 的 wingdi.h 里有 #define ER
   的压缩算法，也可以在新建一个子类
   同样的 加密模式也是 会抽象出一个加密接口，提供不同的加密算法实现。后续如果有更好的加密算法，也可以在新建一个子类
   目前选择了AES +ECDH
+
+
+  四
+  锁模型——sink 内部如何与现有 strand 协作？
+    不是为每一个 Sink（比如某个具体的 MmapSink）绑定一个专属的 Strand
+    我们使用 mutex（我之前建议的）
+  - 调用 Log() 的业务线程自己做 compress+encrypt+append
+  - 多线程并发调 Log() 时，在 mutex 上排队、阻塞
+  - 工作完成 = 数据已经在 mmap cache 里 = Log() 返回
+  - 不需要拷贝 LogMsg（栈上 StringView 还有效）
+  mutex，同步在调用方线程上跑Log() 返回 = 数据已在 mmap cache；不拷贝 LogMsg；cache 满时自然 back-pressure
+
+  1. Formatter 范围：EffectiveSink 是只接 EffectiveFormatter，还是任意 IFormatter 都行
+  2. mmap 文件头里的 client_eph_pub 写一次还是每块一次
+  3. 分片上限 + 淘汰总量上限的默认值
+  4. 分片文件命名规则
+  5. 淘汰定时器频率
+  6. 内部日志用 fmt::print 到 stderr 的具体形式
+  7. 双 cache 与现有 MmapStore 多 buffer 是同一回事还是要新设计
+
+  回答：
+  1. 1. Formatter 范围 → 只接 EffectiveFormatter（强类型）
+  EffectiveSink 构造接 std::unique_ptr<EffectiveFormatter>，不是
+  IFormatter。理由：管道下游是压缩+加密+审计解码，输入格式不固定就没法离线解析；强绑定可以让审计工具假定 proto 二进制单一格式。ConsoleSink
+  那条线继续接 IFormatter，两条 sink 分开。
+  2. mmap header 的 client_eph_pub → 每个 shard 文件头写一次
+  同一进程一次 X25519 协商，整 shard 共用一把 AES key。文件头一次性 32B 足够审计工具还原；每块都写是纯浪费。
+  3. 分片上限 + 淘汰总量 → 单片 64 MiB / 总量 2 GiB（都做成构造参数，给默认值）
+  64 MiB 让 mmap 单次映射不夸张、压缩比稳定；2 GiB 适合中等规模服务。两个值都通过 MmapSinkConfig 暴露，调用方可改。
+  4.分片文件命名 → log-YYYYMMDD-HHMMSS-mmm-NNNN.bin
+  - YYYYMMDD-HHMMSS-mmm：开片时刻（毫秒，避免同秒多片冲突）
+  - NNNN：同毫秒内的递增序号（保险）
+  - 字典序 = 时间序，便于淘汰扫描和肉眼定位
+  - .bin 表示二进制（区别于文本日志）
+  5.淘汰定时器频率 → 30 秒一扫
+  比每次 rotate 触发更宽松、不阻塞写入热路径；30s 对"总量缓慢逼近上限"的场景足够及时。实现上挂在 context 的 timer 接口（如果 [[2-a-context]] 没有
+  timer 抽象就借一个独立 std::thread + condition_variable，沿用 ThreadPool 的 join 套路）。
+  6. 内部日志 → fmt::print(stderr, "[logger-high][level] ...\n", ...)
+  单文件 helper（utils/internal_log.h，分四级 info/warn/error/fatal）。绝对不调用 LogHandle，避免和 [[2-a-context]] 的递归保护冲突。fmt 已经是阶段 0
+   依赖，零新增依赖。
+  7.双 cache vs MmapStore 多 buffer → 复用既有 MmapStore 滚动 buffer，不另起一层
+  [[2-b-mmap]] 里 MmapStore 已经是"一个 active buffer 接收写、其它在 seal/persist"，等价于 N-buffer 滚动。EffectiveSink 直接调
+  MmapStore.Append(encrypted_frame)，不要自己再造一层 cache。"0.8 利用率触发"应该映射到 MmapStore 既有的 IsAcceptable 阈值（如果阈值不是 0.8，让
+  MmapStore 参数化）。
+
+
+  effective_sink就是高效的写入文件对吧，加密这里我用的不是AES+ECDH吗，
+  我看代码怎么还有gcm，这个序列化是集成到了formatter里面吗，这个项目里
+  用protobuf干什么了，还有就是那个加密和压缩部分调用的三方库
+  在third_party咋没有，还有反序列化，解密，再解压的过程有吗，还有这个mm
+  ap模块，业务线程将加密后的日志加入无锁队列，后台线程从队列取出数据，
+  然后通过memcpy将数据拷贝到mmap映射的区域，这里mmap区域是预先分配好的
+  文件映射，后台线程负责memcpy,然后可能需要触发缺页中断，最后依赖内核刷
+  盘或显式msync，或者直接mmap缓存 + 交换，业务线程直接将数据写入当前活
+  动的mmap缓存，写满后切换。后台线程仅仅负责对写满的mmap快调用msync，将
+  脏页刷新到磁盘，无需memcpy,我看项目介绍里
+  会有一个cache文件，是第二种方法吗，咱们项目里用的是什么
+
+   A. 生产可靠性短板
+  1. 崩溃恢复 / 启动重放：当前进程崩溃时还在 mmap buffer 里没落盘的数据会丢；需要扫旧 buffer-*.mmap 重放
+   2. 优雅关停：没看到 LogHandle 析构或信号处理时把 mmap buffer 完整 flush 到 shard 的路径
+    3. 可观测性：dropped / encrypted_total / shard_rotated_total 等计数器没暴露，背压发生时只有 stderr 一行 warn
+
+
+    GCM 是 AES 的工作模式，不是另一个算法。
+    AES 是分组密码，必须选一个模式：ECB / CBC / CTR / GCM /
+  ...。你在开发记录"三"里写的就是
+  "加密模式选型：AES-GCM"。所以完整名字是 AES-256-GCM。GCM 模式自带认证
+  tag（防篡改），就是你记录里那段 [12B nonce][ciphertext][16B 认证 tag]
+  的来源。
+  为什么不用 fmt 文本压缩+加密？
+   1. 可解码：加密后离线还要解出来，二进制 schema
+  有版本可演进、跨语言、不会因为字段顺序变化解析挂掉
+   2. 省字节：varint 编码比字符串紧凑，对压缩前体积有正面影响
+  3. 明确边界：proto 帧自带长度，不像文本要靠分隔符
+
+  mmap 用的是哪种方案？
+
+  用的是你说的第二种（业务线程直接写 mmap 缓存 +
+  切换），不是第一种（无锁队列 + 后台 memcpy）。但有一个补充。
+
+   证据链：
+  - MmapBuffer::Write —— 多生产者并发安全，用 fetch_add(offset_)
+  抢偏移，业务线程直接 memcpy 到 mmap region
+  - MmapStore::Append —— 调 master_->Write，写满返回 false →
+  SwapMasterLocked_ 切到新 master，旧 buffer 投给 strand
+  - MmapBuffer::Seal/Sync —— 后台 strand 上：Seal 等所有写者退出 →
+  Sync() 调 msync → 接着 ForEachFrame 遍历 frame
+  - MmapStore::DrainOne_ —— seal → sync → ForEachFrame(on_persist) →
+  reset → 归还 free_
+  本项目实际：后台 msync 之后 还要 ForEachFrame 把每条 frame 拷到最终 shard 文件
+              mmap 文件是 循环复用的 ring buffer，shard 文件才是归档 
+
+    为什么不让 mmap buffer 直接就是 shard？
+  - buffer 要复用（reset 清零），shard 要长期保留并被 EvictionRunner 淘汰，生命周期不一样
+  - buffer 内是 [len][payload] 帧格式，shard 要前置 48B header
+  - 这样 shard 数量可控，不会满地都是小 mmap 文件
+
+
+
+  新增
+   新增 1 个模块 + 2 个可执行，零修改既有生产代码。
+   复用 examples/effective_sink_smoke.cpp:139-210 已经写好的解码逻辑，把它从测试里抽到正式模块
+   完整流程，一个程序走通：
+    1. 临时目录 logger_demo_<timestamp>/ （不删，最后打印路径）
+     2. cryptopp 生成 X25519 keypair，priv 留内存，pub 写 server.pub (32B raw)
+     3. Context.Configure（小规模线程池：min=2 max=4）
+     4. EffectiveSinkConfig：log_dir=临时目录，shard_size_bytes=8 KiB（强制几条就 rotate）
+     5. EffectiveSink::Create → LogHandle("demo", sink)
+     6. 用 LOG_INFO / LOG_WARN / LOG_ERROR 宏打 30 条混合等级日志
+     7. handle.Flush()，sink 析构
+     8. 打印 shard 文件列表 + 每个文件大小
+     9. 打开第一个 shard，前 128 字节 hexdump 到 stdout：
+          · 显示 "LGRH" 魔数清晰可见
+          · 显示 client_eph_pub 32B
+          · 显示后面 frame 字节是明显乱码（不是文本）
+     10. 调 audit::DecodeShardDir 解码全部，逐条打印明文
+     11. 末尾打印一句 "shards kept at <path> — run examples/log_decoder <path> server.priv to re-verify"
+     12. 额外把 server.priv 也写一份到临时目录（演示用 — 真实场景私钥永远不入仓不出审计机）
+

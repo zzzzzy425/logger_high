@@ -54,3 +54,21 @@ target_link_libraries(effective_sink_smoke PRIVATE
     logger::utils
     cryptopp::cryptopp
 )
+
+add_executable(log_decoder log_decoder.cpp)
+
+target_link_libraries(log_decoder PRIVATE
+    logger::audit
+    logger::utils
+)
+
+add_executable(encrypted_logging_demo encrypted_logging_demo.cpp)
+
+target_link_libraries(encrypted_logging_demo PRIVATE
+    logger::handle
+    logger::sinks
+    logger::context
+    logger::audit
+    logger::utils
+    cryptopp::cryptopp
+)

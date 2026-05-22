@@ -58,13 +58,20 @@ void MmapBuffer::Seal() {
 }
 
 void MmapBuffer::ResetForReuse() {
+    // Capture the previous cycle's high-water mark BEFORE resetting offset_,
+    // so we know exactly how many bytes were touched and need scrubbing.
+    const std::size_t prev_used = std::min<std::size_t>(
+        offset_.load(std::memory_order_relaxed), region_.size());
     offset_.store(0, std::memory_order_relaxed);
     sealed_.store(false, std::memory_order_release);
     // writers_ is already 0 (Seal waited for it).
-    // Zero the leading bytes of the region so stale frame headers from the
-    // previous generation can't be mistaken for valid frames.
-    if (region_.data() && region_.size() >= 4) {
-        std::memset(region_.data(), 0, std::min<std::size_t>(region_.size(), 4096));
+    // Zero every byte that was written in the previous cycle. If we only zero
+    // a prefix, the next cycle's ForEachFrame may walk past its real high-water
+    // mark and mistake stale-but-valid-looking frame headers for real frames,
+    // yielding garbage to on_persist. Beyond the new high-water mark the buffer
+    // must read as all-zeros so the iterator hits len==0 and stops cleanly.
+    if (region_.data() && prev_used > 0) {
+        std::memset(region_.data(), 0, prev_used);
     }
 }
 

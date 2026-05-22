@@ -7,16 +7,8 @@
     ]
   },
   "ExpandedNodes": [
-    "",
-    "\\context",
-    "\\examples",
-    "\\formatter",
-    "\\handle",
-    "\\mmap",
-    "\\sinks",
-    "\\third_party",
-    "\\utils"
+    ""
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\script",
   "PreviewInSolutionExplorer": false
 }
